@@ -167,11 +167,31 @@ body {
 }
 .column70{
     flex: 70%;
+    margin-top: 10%;
+
 }
 .column30{
     flex: 30%;
     background-color: #0077C9;
-    border: 1px solid #003C72;
     width: 100%;
-    height: 100%;
+    height: 70vh;
+}
+
+/* FIX THIS MESS LMAO */
+.form-container{
+    font-size: 20px;
+    border: 1px solid black;
+    width: 30%;
+    height: 20vh;
+    margin: 35% 10% 10% 15%;
+}
+label{
+    float: left;
+}
+
+input[type=text], input[type=password] {
+    width: 70%;
+    margin-left: 5%;
+    height: 30px;
+    border: 1px solid #003C72;
 }
