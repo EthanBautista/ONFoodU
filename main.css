@@ -195,3 +195,11 @@ input[type=text], input[type=password] {
     height: 30px;
     border: 1px solid #003C72;
 }
+
+/*Menu Page*/
+
+table.menuTable{
+    border: 1px solid #003C72;
+ 
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
