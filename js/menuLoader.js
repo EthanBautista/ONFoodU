@@ -14,7 +14,7 @@ function loadMenu($apiURL){
         console.log(jsonData);
         var parsedJsonMenu = JSON.parse(jsonData);
 
-        var tableHTML = "<table>";
+        var tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th></tr>";
         for(var i = 0; i < parsedJsonMenu.length; i++){
             tableHTML = tableHTML + "<tr>" +
                 "<td>" + parsedJsonMenu[i].RestoName + "</td>" +
