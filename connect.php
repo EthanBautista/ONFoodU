@@ -12,10 +12,10 @@ $sql = "SELECT * FROM AllMenu";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo '<table class="menuTable"><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th></tr>';
+    echo '<table class="menuTable"><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th></tr>';
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["RestoName"]."</td><td>".$row["FoodName"]."</td><td>$".$row["Price"]."</td><td>".$row["Calories"]." kcal</td><td>".$row["Description"]."</td></tr>";
+        echo "<tr><td>".$row["RestoName"]."</td><td>".$row["FoodName"]."</td><td>$".$row["Price"]."</td><td>".$row["Calories"]." kcal</td><td>".$row["Description"]."</td><td>".$row["Location"]."</td></tr>";
     }
     echo "</table>";
 } else {
