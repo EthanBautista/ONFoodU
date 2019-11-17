@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/js/menuLoader.js"></script>
 </head>
 
 <body>
@@ -25,19 +27,29 @@
         <div class="row">
             <div class="column25">
                 <div class="FilterContainer">
-                    <h2>Filter</h2>
-                    <a href="./menus/menu.php">All</a>
+                    Filter
+                    <a href="menu.php">All</a>
                     <a href="./menus/uaMenu.html">UA</a>
                     <a href="./menus/ubMenu.html">UB</a>
-                    <a href="./menus/dcCafMenu.html">UA</a>
-                    <a href="./menus/uaMenu.html">UA</a>
+                    <a href="./menus/dcCafMenu.html">DC Caf</a>
+                    <a href="./menus/studentCenterMenu.html">Student Center</a>
                 </div>
             </div>
 
             <div class="column75">
-                <?php 
-                    include 'connect.php';
-                ?>
+        <?php
+            include 'connect.php';
+        ?>
+<!--
+            <div id="menuListing">
+
+            </div>
+
+            <script>
+                apiURL = "./api.php?QueryNum=0";
+                loadMenu(apiURL);
+            </script>
+-->
         </div>
         </div>
     </section>
