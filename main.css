@@ -200,6 +200,34 @@ input[type=text], input[type=password] {
 
 table.menuTable{
     border: 1px solid #003C72;
- 
+    margin: 2%;
+    font-size: 22px;
+
+
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+.menuTable th{
+    background-color: #003C72;
+    color: white;
+    text-align: left;
+    font-size: 24px;
+    font-family: Ubuntu;
+    border: 1px solid #003C72;
+}
+.menuTable tr{
+    border: 1px solid #003C72;
+}
+
+table tr th:nth-child(1){
+    width: 15%;
+}
+table tr th:nth-child(3){
+    width: 6%;
+}
+table tr th:nth-child(4){
+    width: 6%;
+}
+table tr th:nth-child(5){
+    width: 50%;
+}
