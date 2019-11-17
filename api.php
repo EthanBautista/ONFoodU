@@ -25,11 +25,14 @@ switch ($queryNumber) {
     case 1:
         //Query gets orders placed by a particular user with the following details
         //OrderID, FoodName, Food Description, Food Calories, Food Price, Food Quantity
-        //Takes UserID set by Get pram
+        //Takes UserID as a get pram
         caseOneQuery($conn);
         break;
     case 2:
-        //add query handler here
+        //Query gets the following
+        //RestoName, FoodName, Price, Calories, Description, Location
+        //Takes Restro Location as a get pram ex Location=DC%20Caf   NOTE %20 repersents space in URL
+        caseTwoQuery($conn);
         break;
     case 3:
         //add query handler here
@@ -70,6 +73,18 @@ function caseOneQuery($conn){
         jsonReponse($conn, $sqlQuery);
     } else {
         echo json_encode(array("Bad Request", "UserID not set or empty"));
+    }
+}
+
+function caseTwoQuery($conn){
+    if(isset($_GET['Location']) && !empty($_GET['Location'])){
+        $sqlQuery = "
+            SELECT Restaurants.RestoName, FoodName, Price, Calories, Description, Restaurants.Location
+            FROM Menu , Restaurants
+            WHERE Menu.RestoNum = Restaurants.RestoNum AND Restaurants.Location LIKE '%".$_GET['Location']."%'";
+        jsonReponse($conn, $sqlQuery);
+    } else {
+        echo json_encode(array("Bad Request", "Location not set or empty"));
     }
 }
 
