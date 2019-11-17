@@ -19,7 +19,7 @@ switch ($queryNumber) {
     case 0:
         //Query gets the entire menu for all restaurants including restoname and location
         //Takes no additional get pram
-        $sqlQuery = "SELECT * FROM `ALlMenu`";
+        $sqlQuery = "SELECT * FROM `AllMenu`";
         jsonReponse($conn, $sqlQuery);
         break;
     case 1:
