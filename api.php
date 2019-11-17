@@ -17,9 +17,9 @@ if ($conn->connect_error) {
 $queryNumber = $_GET['QueryNum'];
 switch ($queryNumber) {
     case 0:
-        //Query gets the entire menu for all restaurants
+        //Query gets the entire menu for all restaurants including restoname and location
         //Takes no additional get pram
-        $sqlQuery = "SELECT * FROM `Menu`";
+        $sqlQuery = "SELECT * FROM `ALlMenu`";
         jsonReponse($conn, $sqlQuery);
         break;
     case 1:
