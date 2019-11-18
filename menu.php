@@ -7,9 +7,9 @@
     <title>ONFoodU</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="/js/menuLoader.js"></script>
+    <script src="./js/menuLoader.js"></script>
 </head>
 
 <body>
@@ -37,10 +37,6 @@
             </div>
 
             <div class="column75">
-        <?php
-            include 'connect.php';
-        ?>
-<!--
             <div id="menuListing">
 
             </div>
@@ -49,9 +45,12 @@
                 apiURL = "./api.php?QueryNum=0";
                 loadMenu(apiURL);
             </script>
--->
+
+            </div>
         </div>
-        </div>
+    </section>
+    <section>
+
     </section>
 </body>
 
