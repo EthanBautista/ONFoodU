@@ -8,8 +8,10 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./js/menuLoader.js"></script>
+    <script src="./js/dropdown.js"></script>
 </head>
 
 <body>
@@ -37,20 +39,47 @@
             </div>
 
             <div class="column75">
-            <div id="menuListing">
+                <div id="menuListing">
 
-            </div>
+                </div>
 
-            <script>
-                apiURL = "./api.php?QueryNum=0";
-                loadMenu(apiURL);
-            </script>
+                <script>
+                    apiURL = "./api.php?QueryNum=0";
+                    loadMenu(apiURL);
+                </script>
 
             </div>
         </div>
     </section>
-    <section>
+    <section class="orderContainer">
+        <?php 
+            include "config.php";
+        ?>
+        <div> Order Food </div>
+        <div>Select Location:</div>
+        <div class="dropdown">
+            <select id="sel_resto">
+                <option value="0">- Select -</option>
+                <?php 
+                    // Fetch Restaurants
+                    $sql_resto = "SELECT * FROM `Restaurants`";
+                    $resto_data = mysqli_query($con,$sql_resto);
+                    while($row = mysqli_fetch_assoc($resto_data) ){
+                        $restoid = $row['RestoNum'];
+                        $resto_name = $row['RestoName'];
+                        
+                        // Option
+                        echo "<option value='".$restoid."' >".$resto_name."</option>";
+                    }
+                ?>
+            </select>
+            <div class="clear"></div>
 
+            <div>Food </div>
+            <select id="sel_food">
+                <option value="0">- Select -</option>
+            </select>
+        </div>
     </section>
 </body>
 

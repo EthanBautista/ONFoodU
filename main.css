@@ -259,3 +259,18 @@ table tr th:nth-child(4){
 table tr th:nth-child(5){
     width: 45%;
 }
+
+/* Order System */
+.orderContainer{
+    margin: 5%;
+
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown select-selected{
+    background-color: #0077C9;
+
+}
