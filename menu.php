@@ -56,30 +56,7 @@
             include "config.php";
         ?>
         <div> Order Food </div>
-        <div>Select Location:</div>
-        <div class="dropdown">
-            <select id="sel_resto">
-                <option value="0">- Select -</option>
-                <?php 
-                    // Fetch Restaurants
-                    $sql_resto = "SELECT * FROM `Restaurants`";
-                    $resto_data = mysqli_query($con,$sql_resto);
-                    while($row = mysqli_fetch_assoc($resto_data) ){
-                        $restoid = $row['RestoNum'];
-                        $resto_name = $row['RestoName'];
-                        
-                        // Option
-                        echo "<option value='".$restoid."' >".$resto_name."</option>";
-                    }
-                ?>
-            </select>
-            <div class="clear"></div>
 
-            <div>Food </div>
-            <select id="sel_food">
-                <option value="0">- Select -</option>
-            </select>
-        </div>
     </section>
 </body>
 
