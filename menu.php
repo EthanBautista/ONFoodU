@@ -11,7 +11,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./js/menuLoader.js"></script>
-    <script src="./js/dropdown.js"></script>
 </head>
 
 <body>
@@ -30,11 +29,12 @@
             <div class="column25">
                 <div class="FilterContainer">
                     Filter
-                    <a href="menu.php">All</a>
-                    <a href="./menus/uaMenu.html">UA</a>
-                    <a href="./menus/ubMenu.html">UB</a>
-                    <a href="./menus/dcCafMenu.html">DC Caf</a>
-                    <a href="./menus/studentCenterMenu.html">Student Center</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=0')">All</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=2&Location=UA')">UA</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=2&Location=UB%20Caf')">UB</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=2&Location=DC%20Caf')">DC Caf</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=2&Location=Student%20Center')">Student Center</a>
+
                 </div>
             </div>
 
@@ -44,8 +44,13 @@
                 </div>
 
                 <script>
-                    apiURL = "./api.php?QueryNum=0";
-                    loadMenu(apiURL);
+                    function selectMenu(query) {
+                        loadMenu(query);
+                    }
+                    window.onload = function () {
+                        apiURL = "./api.php?QueryNum=0";
+                        loadMenu(apiURL);
+                    }
                 </script>
 
             </div>
