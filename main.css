@@ -43,6 +43,10 @@ body {
     overflow: hidden;
 }
 
+a#loginnav{
+    float:right;
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;

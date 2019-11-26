@@ -18,7 +18,7 @@
         <div class="topnav" id="myTopnav">
             <a href="index.html">ONFoodU</a>
             <a href="menu.php" class="active">Menu</a>
-            <a href="login.html">Login</a>
+            <a href="login.html" id="loginnav">Login</a>
             <a href="javascript:void(0);" class="icon" onclick="navigation()">
                 <i class="fa fa-bars"></i>
             </a>
