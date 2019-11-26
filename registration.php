@@ -1,5 +1,6 @@
 <?php
-include 'autoload.php';
+include 'config.php';
+
 session_start();
 
 $conn = new mysqli(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'), env('DB_NAME'));
