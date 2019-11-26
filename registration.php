@@ -6,6 +6,7 @@ session_start();
 
 $name=$_POST['user'];
 $pass=$_POST['password'];
+$hashed=hash('sha256',$pass);
 
 $s = "select * from Users where name = '$name'";
 
@@ -16,7 +17,7 @@ $num = mysqli_num_rows($result);
 if($num==1){
 	echo "Username already exists in the system!";
 }else{
-	$reg = "insert into Users(name,password) values ('$name','$pass')";
+	$reg = "insert into Users(name,password) values ('$name','$hashed')";
 	mysqli_query($con, $reg);
 	echo "Registration Successful";
 }
