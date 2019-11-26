@@ -159,41 +159,25 @@ body {
 }
 
 /* Login Page */
-.login-container{
-    margin: auto;
-    width: 50vw;
-    height: 70vh;
-    border: 1px solid #003C72;
-}
-.column70{
-    flex: 70%;
-    margin-top: 10%;
+.login-box{
+    max-width: 1000px;
+    float: none;
+    margin: 250px auto;
 
 }
-.column30{
-    flex: 30%;
-    background-color: #0077C9;
-    width: 100%;
-    height: 70vh;
+
+.login-left{
+    background: rgba(211,211,211,0.5);
+    padding: 30px;
 }
 
-/* FIX THIS MESS LMAO */
-.form-container{
-    font-size: 20px;
-    border: 1px solid black;
-    width: 30%;
-    height: 20vh;
-    margin: 35% 10% 10% 15%;
-}
-label{
-    float: left;
+.login-right{
+    background: #fff;
+    padding: 30px;
 }
 
-input[type=text], input[type=password] {
-    width: 70%;
-    margin-left: 5%;
-    height: 30px;
-    border: 1px solid #003C72;
+.form-control{
+    background-color: transparent !important;
 }
 
 /*Menu Page*/
