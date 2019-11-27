@@ -16,9 +16,9 @@
 <body>
     <header>
         <div class="topnav" id="myTopnav">
-            <a href="index.html">ONFoodU</a>
+            <a href="index.php">ONFoodU</a>
             <a href="menu.php" class="active">Menu</a>
-            <a href="login.html" id="loginnav">Login</a>
+            <a href="login.php" id="loginnav">Login</a>
             <a href="javascript:void(0);" class="icon" onclick="navigation()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -33,7 +33,9 @@
                     <a onclick="loadMenu('./api.php?QueryNum=2&Location=UA')">UA</a>
                     <a onclick="loadMenu('./api.php?QueryNum=2&Location=UB%20Caf')">UB</a>
                     <a onclick="loadMenu('./api.php?QueryNum=2&Location=DC%20Caf')">DC Caf</a>
-                    <a onclick="loadMenu('./api.php?QueryNum=2&Location=Student%20Center')">Student Center</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=CheapFood')">Cheap Food</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=Location')">Location</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=LowCal')">Low Calories</a>
 
                 </div>
             </div>

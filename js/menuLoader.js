@@ -39,7 +39,7 @@ function loadMenu(apiURL){
                     "<td>" + parsedJsonMenu[i].Location + "</td>" +
                     //"<td>" + parsedJsonMenu[i] + "</td>" +
                     //"<td>" + parsedJsonMenu[i] + "</td>" +
-                    "<td><input type='button' value='Add'></td>" +
+                    "<td><input type='button' value='Add' onclick='add()'></td>" +
                     "</tr>";
             }
         }

@@ -38,7 +38,7 @@ switch ($queryNumber) {
         //Query gets the following
         //RestoName, FoodName, Price, Calories, Description, Location
         //Takes Restro Location as a get pram ex Location=DC%20Caf   NOTE %20 repersents space in URL
-        caseTwoQuery($conn);
+        caseThreeQuery($conn);
         break;
     case 4:
         //add query handler here

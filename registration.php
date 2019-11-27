@@ -19,6 +19,8 @@ if($num==1){
 }else{
 	$reg = "insert into Users(name,password) values ('$name','$hashed')";
 	mysqli_query($con, $reg);
-	echo "Registration Successful";
+	$_SESSION["id"] = $name;
+	header("Location: login.php");
+	exit;
 }
 ?>
