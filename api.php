@@ -36,8 +36,8 @@ switch ($queryNumber) {
         break;
     case 3:
         //Query gets the following
-        //RestoName, FoodName, Price, Calories, Description, Location
-        //Takes Restro Location as a get pram ex Location=DC%20Caf   NOTE %20 repersents space in URL
+        //Gets data fined in the particular view
+        //Takes View as a pram
         caseThreeQuery($conn);
         break;
     case 4:
@@ -95,7 +95,7 @@ function caseThreeQuery($conn){
 	if(isset($_GET['View']) && !empty($_GET['View'])){
 		$sqlQuery = "
 			SELECT * FROM ".$_GET['View']."";
-		jsonResponse($conn, $sqlQuery);
+        jsonReponse($conn, $sqlQuery);
 	} else echo json_encode(array("Bad Request", "View not set or empty"));
 }
 
