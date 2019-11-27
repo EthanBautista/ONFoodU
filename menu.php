@@ -16,9 +16,13 @@
 <body>
     <header>
         <div class="topnav" id="myTopnav">
-            <a href="index.php">ONFoodU</a>
-            <a href="menu.php" class="active">Menu</a>
-            <a href="login.php" id="loginnav">Login</a>
+            <a href="index.php" class="active">ONFoodU</a>
+            <a href="menu.php">Menu</a>
+            <?php if (isset($_SESSION["id"])) { 
+                echo "<a href='login.php' id='loginnav'>My Account</a>";
+            } else { 
+                echo "<a href='login.php' id='loginnav'>Login</a>";
+             } ?>
             <a href="javascript:void(0);" class="icon" onclick="navigation()">
                 <i class="fa fa-bars"></i>
             </a>
