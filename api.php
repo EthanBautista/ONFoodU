@@ -35,7 +35,10 @@ switch ($queryNumber) {
         caseTwoQuery($conn);
         break;
     case 3:
-        //add query handler here
+        //Query gets the following
+        //Gets data fined in the particular view
+        //Takes View as a pram
+        caseThreeQuery($conn);
         break;
     case 4:
         //add query handler here
@@ -86,6 +89,14 @@ function caseTwoQuery($conn){
     } else {
         echo json_encode(array("Bad Request", "Location not set or empty"));
     }
+}
+
+function caseThreeQuery($conn){
+	if(isset($_GET['View']) && !empty($_GET['View'])){
+		$sqlQuery = "
+			SELECT * FROM ".$_GET['View']."";
+        jsonReponse($conn, $sqlQuery);
+	} else echo json_encode(array("Bad Request", "View not set or empty"));
 }
 
 ?>

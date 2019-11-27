@@ -43,6 +43,10 @@ body {
     overflow: hidden;
 }
 
+a#loginnav{
+    float:right;
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
@@ -107,7 +111,7 @@ body {
     margin: 2% 0 2% 0;
 }
 
-.grid-left {
+div.grid-left {
     float: right;
     border: 1px solid #003C72;
     width: 25vw;
@@ -117,7 +121,7 @@ body {
     color: white;
 }
 
-.grid-right {
+div.grid-right {
     float: left;
     border: 1px solid #003C72;
     width: 25vw;
@@ -135,8 +139,7 @@ body {
     font-size: 4em;
 }
 
-.column a:hover{
-    background-color: #0077C9;
+.column a:hover,div.grid-right:hover,div.grid-left:hover{
     opacity: 0.9;
 }
 
