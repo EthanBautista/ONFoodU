@@ -75,6 +75,15 @@ session_start();
     include "config.php";
     ?>
     <div> Order Food</div>
+        <?php
+            if (isset($_SESSION["id"])) {
+                echo "insert stuff here";
+            }else{
+                echo "Login Required";
+            }
+
+
+        ?>
 </section>
 </body>
 
