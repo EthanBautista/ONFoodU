@@ -14,7 +14,7 @@
     <script src="/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="./js/menuLoader.js"></script>
+    <script src="./js/viewLoader.js"></script>
 </head>
 
 <body>
@@ -72,7 +72,7 @@
 </div>
 
         <script>
-            apiURL = "../api.php?QueryNum=3&View=AcountOrders";
+            apiURL = "./api.php?QueryNum=3&View=AccountOrders";
             loadMenu(apiURL);
         </script>
         <a href="logout.php">Logout</a>

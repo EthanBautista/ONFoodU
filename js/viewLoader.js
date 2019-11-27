@@ -16,14 +16,14 @@ function loadMenu(apiURL){
         //console.log(jsonData);
         var parsedJsonMenu = JSON.parse(jsonData);
 
-        var tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th><th></th></tr>";
+        var tableHTML = "<table class='menuTable'><tr>";
         for(var i = 0; i < parsedJsonMenu.length; i++){
-            if (apiURL === "./api.php?QueryNum=3&View=AccountOrder"){
-                tableHTML = tableHTML + "<tr>" +
+            if (apiURL === "./api.php?QueryNum=3&View=AccountOrders"){
+                tableHTML = tableHTML + "<th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr><tr>" +
                     "<td>" + parsedJsonMenu[i].ID + "</td>" +
                     "<td>" + parsedJsonMenu[i].Name + "</td>" +
                     "<td>$" + parsedJsonMenu[i].OrderID + "</td>" +
-                    "<td>" + parsedJsonMenu[i].FoodName + " kcal</td>" +
+                    "<td>" + parsedJsonMenu[i].FoodName + "</td>" +
                     "<td>" + parsedJsonMenu[i].Quantity + "</td>" +
                     "</tr>";
             }
