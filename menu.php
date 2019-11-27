@@ -53,13 +53,20 @@
                 </div>
 
                 <script>
-                    function selectMenu(query) {
-                        loadMenu(query);
-                    }
-                    window.onload = function () {
-                        apiURL = "./api.php?QueryNum=0";
-                        loadMenu(apiURL);
-                    }
+
+
+                    <?php
+                            if(isset($_POST['Location'])){
+                                $loadURL = "./api.php?QueryNum=2&Location=".$_POST['Location'];
+                                echo "loadMenu('".$loadURL."')";
+
+                            } else {
+                                echo "
+                                function selectMenu(query) {loadMenu(query);}
+                                window.onload = function () {apiURL = \"./api.php?QueryNum=0\";loadMenu(apiURL);};
+                                ";
+                            }
+                    ?>
                 </script>
 
             </div>
