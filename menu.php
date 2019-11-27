@@ -56,10 +56,9 @@ session_start();
 
 
                 <?php
-                if(isset($_POST['Location'])){
-                    $loadURL = "./api.php?QueryNum=2&Location=".$_POST['Location'];
-                    echo "loadMenu('".$loadURL."')";
-
+                if (isset($_POST['Location'])) {
+                    $loadURL = "./api.php?QueryNum=2&Location=" . $_POST['Location'];
+                    echo "loadMenu('" . $loadURL . "')";
                 } else {
                     echo "
                                 function selectMenu(query) {loadMenu(query);}
@@ -68,7 +67,6 @@ session_start();
                 }
                 ?>
             </script>
-
         </div>
     </div>
 </section>
@@ -76,8 +74,7 @@ session_start();
     <?php
     include "config.php";
     ?>
-    <div> Order Food </div>
-
+    <div> Order Food</div>
 </section>
 </body>
 
