@@ -8,7 +8,7 @@ $name=$_POST['user'];
 $pass=$_POST['password'];
 $hashed=hash('sha256',$pass);
 
-$s = "select * from Users where name = '$name' && password='$hashed'";
+$s = "select * from Accounts where Name = '$name' && Password='$hashed'";
 
 $result= mysqli_query($con, $s);
 
