@@ -59,7 +59,7 @@
             <div class="column">
                 <form id="UBCafForm" method="post" action="menu.php">
                     <input type="hidden" name="Location" value="UB Caf">
-                    <div class="grid-right" onclick="document.getElementById('UBCafForm').submit();">
+                    <div class="grid-left" onclick="document.getElementById('UBCafForm').submit();">
                         <div class="locationText">
                             UB Caf
                         </div>
@@ -84,7 +84,7 @@
             <div class="column">
                 <form id="StudentCenterForm" method="post" action="menu.php">
                     <input type="hidden" name="Location" value="Student Center">
-                    <div class="grid-right" onclick="document.getElementById('StudentCenterForm').submit();">
+                    <div class="grid-left" onclick="document.getElementById('StudentCenterForm').submit();">
                         <div class="locationText">
                             Student Center
                         </div>
