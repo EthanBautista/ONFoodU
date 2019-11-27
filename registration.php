@@ -18,7 +18,7 @@ $num = mysqli_num_rows($result);
 if($num==1){
 	echo "Username already exists in the system!";
 }else{
-	$reg = "insert into Accounts(Name,Email,Password) values ('$name','$email','$hashed')";
+	$reg = "insert into Accounts(Name,Email,Balance,Password) values ('$name','$email','0','$hashed')";
 	mysqli_query($con, $reg);
 	$_SESSION["id"] = $name;
 	header("Location: login.php");
