@@ -235,16 +235,16 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     border: 1px solid #003C72;
 }
 
-table tr th:nth-child(1){
+.menuTable tr th:nth-child(1){
     width: 15%;
 }
-table tr th:nth-child(3){
+.menuTable tr th:nth-child(3){
     width: 6%;
 }
-table tr th:nth-child(4){
+.menuTable tr th:nth-child(4){
     width: 6%;
 }
-table tr th:nth-child(5){
+.menuTable tr th:nth-child(5){
     width: 45%;
 }
 
@@ -262,3 +262,29 @@ table tr th:nth-child(5){
     background-color: #0077C9;
 
 }
+
+/* Table */
+table.orderTable{
+    border: 2px solid #003C72;
+    font-size: 22px;
+    font-family: 'ITC Franklin Gothic STD';
+}
+
+.orderTable th{
+    background-color: #003C72;
+    color: white;
+    text-align: left;
+    font-size: 24px;
+    font-family: Ubuntu;
+    border: 1px solid #003C72;
+    width: 5%;
+    padding-left: 2%;
+}
+.orderTable td{
+    border: 1px solid white;
+    padding-left: 2%;
+}
+.orderTable tr{
+    border: 1px solid #003C72;
+}
+

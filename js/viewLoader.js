@@ -17,7 +17,7 @@ function loadMenu(apiURL) {
         var parsedJsonMenu = JSON.parse(jsonData);
 
         if (apiURL === "./api.php?QueryNum=3&View=AccountOrders") {
-            var tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>ID</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].ID + "</td>" +
@@ -29,7 +29,7 @@ function loadMenu(apiURL) {
             }
         } else if (apiURL === "./api.php?QueryNum=3&View=UserOrders") {
             // Fix headers
-            var tableHTML = "<table class='menuTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
@@ -42,7 +42,7 @@ function loadMenu(apiURL) {
             }
         } else if (apiURL === "./api.php?QueryNum=3&View=OrdersWItems") {
             // Fix headers
-            var tableHTML = "<table class='menuTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
@@ -50,7 +50,7 @@ function loadMenu(apiURL) {
             }
         } else if (apiURL === "./api.php?QueryNum=3&View=OrdersOneItemMore") {
             // Fix headers
-            var tableHTML = "<table class='menuTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
