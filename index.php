@@ -10,7 +10,7 @@
     <title>ONFoodU</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
 </head>
 
 <body>
@@ -31,6 +31,7 @@
     <section class="container">
         <h1></h1>
         <div class="row">
+
             <div class="column">
                 <a href="menu.php">
                     <div class="grid-left">
@@ -40,55 +41,68 @@
                     </div>
                 </a>
             </div>
+
             <div class="column">
-                <a href="./menus/uaMenu.html">
-                    <div class="grid-right">
+                <form id="UAForm" method="post" action="menu.php">
+                    <input type="hidden" name="Location" value="UA">
+                    <div class="grid-right" onclick="document.getElementById('UAForm').submit();">
                         <div class="locationText">
                             UA
                         </div>
                     </div>
-                </a>
+                </form>
             </div>
+
         </div>
         <div class="row">
+
             <div class="column">
-                <a href="./menus/ubMenu.html">
-                    <div class="grid-left">
+                <form id="UBCafForm" method="post" action="menu.php">
+                    <input type="hidden" name="Location" value="UB Caf">
+                    <div class="grid-right" onclick="document.getElementById('UBCafForm').submit();">
                         <div class="locationText">
-                            UB CAF
+                            UB Caf
                         </div>
                     </div>
-                </a>
+                </form>
             </div>
+
             <div class="column">
-                <a href="./menus/dcCafMenu.html">
-                    <div class="grid-right">
+                <form id="DCCafForm" method="post" action="menu.php">
+                    <input type="hidden" name="Location" value="DC Caf">
+                    <div class="grid-right" onclick="document.getElementById('DCCafForm').submit();">
                         <div class="locationText">
-                            DC CAF
+                            DC Caf
                         </div>
                     </div>
-                </a>
+                </form>
             </div>
+
         </div>
         <div class="row">
+
             <div class="column">
-                <a href="./menus/studentCenterMenu.html">
-                    <div class="grid-left">
+                <form id="StudentCenterForm" method="post" action="menu.php">
+                    <input type="hidden" name="Location" value="Student Center">
+                    <div class="grid-right" onclick="document.getElementById('StudentCenterForm').submit();">
                         <div class="locationText">
                             Student Center
                         </div>
                     </div>
-                </a>
+                </form>
             </div>
+
             <div class="column">
-                <a href="menu.html">
-                    <div class="grid-right">
+                <form id="LibraryForm" method="post" action="menu.php">
+                    <input type="hidden" name="Location" value="Library">
+                    <div class="grid-right" onclick="document.getElementById('LibraryForm').submit();">
                         <div class="locationText">
                             Library
                         </div>
                     </div>
-                </a>
+                </form>
             </div>
+
         </div>
 
     </section>
