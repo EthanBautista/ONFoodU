@@ -1,7 +1,20 @@
 function addCart(itemID){
     $.ajax({
         crossOrigin: false,
-        url: "cart.php",
+        url: "addCart.php",
+        type: "POST",
+        data: {id: itemID},
+    }).done(function(data) {
+            // Do stuff when the AJAX call returns
+            console.log(data);
+            updateCart(data);
+    });
+}
+
+function removeCart(itemID){
+    $.ajax({
+        crossOrigin: false,
+        url: "removeCart.php",
         type: "POST",
         data: {id: itemID},
     }).done(function(data) {
@@ -22,6 +35,7 @@ function updateCart(cartData){
             "<td>" + parsedJson[i].qty + "</td>" +
             "<td>$" + parsedJson[i].price + "</td>" +
             "<td>" + parsedJson[i].total + "</td>" +
+            "<td> <input type='button' onClick='removeCart("+parsedJson[i].id+")' value='remove'/></td>" +
             //"<td>" + parsedJsonMenu[i] + "</td>" +
             //"<td>" + parsedJsonMenu[i] + "</td>" +
             "</tr>";
