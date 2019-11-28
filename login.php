@@ -82,6 +82,7 @@
                 $balance= $row["Balance"];
             }
         }
+        mysqli_close($con);
         echo  "<div class='accHeader'>".$_SESSION["name"]."</div>";
         ?>
 

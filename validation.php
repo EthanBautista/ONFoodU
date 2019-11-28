@@ -22,4 +22,6 @@ if($num==1){
 }else{
 	header('location:login.php');
 }
+
+mysqli_close($con);
 ?>
