@@ -11,7 +11,8 @@ session_start();
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/addMoney.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./js/viewLoader.js"></script>
@@ -89,7 +90,21 @@ session_start();
     <div class="balanceContainer">
 
         <div class="balanceHeader">Balance: <?php echo $balance; ?></div>
+
     </div>
+
+    <div id="addBalanceContainer">
+        <form onsubmit="return false">
+            <table>
+                <tr><td>Credit Card Number:</td><td><input required type="number" id="ccnum" name="ccnum"></td></tr>
+                <tr><td> Name On Card:</td><td><input required type="text" id="name" name="name"></td></tr>
+                <tr><td> Add Amount:</td><td><input required type="number" id="addAmount"></td></tr>
+                <tr><td></td><td><button id="addMoney()" onclick="addMoney()">Add Money</button></td></tr>
+            </table>
+        </form>
+
+    </div>
+
     <div class="orderHeader">Orders</div>
     <div id="menuListing">
 
@@ -99,6 +114,7 @@ session_start();
         <script>
             apiURL = "./api.php?QueryNum=3&View=AccountOrders";
             loadMenu(apiURL);
+
         </script>
         <a href="logout.php" class="logout">Logout</a>
         <?php }?>
