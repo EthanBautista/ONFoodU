@@ -61,7 +61,8 @@ function loadMenu(apiURL){
                         "<td>" + parsedJsonMenu[i].Location + "</td>" +
                         //"<td>" + parsedJsonMenu[i] + "</td>" +
                         //"<td>" + parsedJsonMenu[i] + "</td>" +
-                        "<td><input type='button' value='Add' onclick='add()'></td>" +
+                        "<td><form name='addToCartForm' onsubmit ='return false'>"+
+                        "<input type='submit' class='add' onclick=addCart('"+parsedJsonMenu[i].ItemID +"') value='Add'/></form></td>" +
                         "</tr>";
             }
         }

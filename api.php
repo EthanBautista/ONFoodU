@@ -82,7 +82,7 @@ function caseOneQuery($conn){
 function caseTwoQuery($conn){
     if(isset($_GET['Location']) && !empty($_GET['Location'])){
         $sqlQuery = "
-            SELECT Restaurants.RestoName, FoodName, Price, Calories, Description, Restaurants.Location
+            SELECT ItemID, Restaurants.RestoName, FoodName, Price, Calories, Description, Restaurants.Location
             FROM Menu , Restaurants
             WHERE Menu.RestoNum = Restaurants.RestoNum AND Restaurants.Location LIKE '%".$_GET['Location']."%'";
         jsonReponse($conn, $sqlQuery);

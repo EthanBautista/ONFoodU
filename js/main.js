@@ -7,7 +7,3 @@ function navigation() {
       x.className = "topnav";
     }
   }
-
-function add() {
-  
-}

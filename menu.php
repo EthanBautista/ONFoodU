@@ -14,6 +14,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./js/menuLoader.js"></script>
+    <script src="./js/cart.js"></script>
 </head>
 
 <body>
@@ -72,19 +73,19 @@ session_start();
     </div>
 </section>
 <section class="orderContainer">
-    <?php
-    include "config.php";
-    ?>
-    <div> Order Food</div>
+    <div class="orderSysHeader"> Shopping Cart</div>
+    <div class="cartContainer">
         <?php
-            if (isset($_SESSION["id"])) {
-                echo "insert stuff here";
+            if (isset($_SESSION["id"])) {?>
+                <div id="cart">
+
+                </div>      
+        <?php
             }else{
                 echo "Login Required";
             }
-
-
         ?>
+        </div>
 </section>
 </body>
 
