@@ -70,17 +70,38 @@
                 </div>
             </div>
         </div>
-    <?php } else { echo  $_SESSION["name"] ;?>
+    <?php } else { 
+        $id = $_SESSION['id'];
+        include 'config.php';
+        include 'autoload.php';
+        $s = "select * from Accounts where ID = '$id'";
+        $result= mysqli_query($con, $s);
+        $num = mysqli_num_rows($result);
+        if($num==1){
+            while($row = mysqli_fetch_assoc($result)){
+                $balance= $row["Balance"];
+            }
+        }
+        echo  "<div class='accHeader'>".$_SESSION["name"]."</div>";
+        ?>
+
+        <div class="balanceContainer">
+            
+            <div class="balanceHeader">Balance: <?php echo $balance; ?></div>
+        </div>
+        <div class="orderHeader">Orders</div>
         <div id="menuListing">
 
-</div>
+        </div>
+        <div>
 
         <script>
             apiURL = "./api.php?QueryNum=3&View=AccountOrders";
             loadMenu(apiURL);
         </script>
-        <a href="logout.php">Logout</a>
+       
     <?php }?>
+    <a href="logout.php" class="logout">Logout</a>
     </section>
 </body>
 
