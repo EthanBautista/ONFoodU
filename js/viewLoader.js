@@ -29,7 +29,7 @@ function loadMenu(apiURL) {
             }
         } else if (apiURL === "./api.php?QueryNum=3&View=UserOrders") {
             // Fix headers
-            var tableHTML = "<table class='orderTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>Order ID</th><th>Food Name</th><th>Description</th><th>Calories</th><th>Price</th><th>Quantity</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
@@ -42,7 +42,7 @@ function loadMenu(apiURL) {
             }
         } else if (apiURL === "./api.php?QueryNum=3&View=OrdersWItems") {
             // Fix headers
-            var tableHTML = "<table class='orderTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>Order Id</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
@@ -50,7 +50,7 @@ function loadMenu(apiURL) {
             }
         } else if (apiURL === "./api.php?QueryNum=3&View=OrdersOneItemMore") {
             // Fix headers
-            var tableHTML = "<table class='orderTable'><tr><th>Id</th><th>Food Item</th><th>Price</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>Order ID</th><th>Account ID</th><th>Resto Num</th><th>Date</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
