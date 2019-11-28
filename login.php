@@ -81,6 +81,7 @@ session_start();
         while($row = mysqli_fetch_assoc($result)){
             $balance= $row["Balance"];
         }
+    }
         mysqli_close($con);
         echo  "<div class='accHeader'>".$_SESSION["name"]."</div>";
         ?>
