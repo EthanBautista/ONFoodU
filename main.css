@@ -297,7 +297,7 @@ table.orderTable{
     text-align: center;
     background-color: #FF6A38;
     height: 16vh;
-    padding-top: 2%;
+    padding-top: 2.5%;
 }
 
 .balanceHeader{
@@ -321,7 +321,6 @@ table.orderTable{
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin-top: 2%;
 }
