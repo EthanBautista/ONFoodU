@@ -100,9 +100,9 @@ session_start();
             apiURL = "./api.php?QueryNum=3&View=AccountOrders";
             loadMenu(apiURL);
         </script>
-
-        <?php }?>
         <a href="logout.php" class="logout">Logout</a>
+        <?php }?>
+        
 </section>
 </body>
 </html>
