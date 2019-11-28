@@ -1,5 +1,5 @@
-<?php 
-    session_start();
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,26 +13,26 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./js/viewLoader.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="topnav" id="myTopnav">
-            <a href="index.php" >ONFoodU</a>
-            <a href="menu.php">Menu</a>
-            <?php if (isset($_SESSION["id"])) { 
-                echo "<a href='login.php'class='active' id='loginnav'>My Account</a>";
-            } else { 
-                echo "<a href='login.php'class='active' id='loginnav'>Login</a>";
-             } ?>
-            <a href="javascript:void(0);" class="icon" onclick="navigation()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </header>
-    <section class="container">
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="index.php" >ONFoodU</a>
+        <a href="menu.php">Menu</a>
+        <?php if (isset($_SESSION["id"])) {
+            echo "<a href='login.php'class='active' id='loginnav'>My Account</a>";
+        } else {
+            echo "<a href='login.php'class='active' id='loginnav'>Login</a>";
+        } ?>
+        <a href="javascript:void(0);" class="icon" onclick="navigation()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</header>
+<section class="container">
     <?php if (!isset($_SESSION["id"])) { ?>
         <div class="login-box">
             <div class="row">
@@ -70,40 +70,38 @@
                 </div>
             </div>
         </div>
-    <?php } else { 
-        $id = $_SESSION['id'];
-        include 'config.php';
-        include 'autoload.php';
-        $s = "select * from Accounts where ID = '$id'";
-        $result= mysqli_query($con, $s);
-        $num = mysqli_num_rows($result);
-        if($num==1){
-            while($row = mysqli_fetch_assoc($result)){
-                $balance= $row["Balance"];
-            }
+    <?php } else {
+    $id = $_SESSION['id'];
+    include 'config.php';
+    include 'autoload.php';
+    $s = "select * from Accounts where ID = '$id'";
+    $result= mysqli_query($con, $s);
+    $num = mysqli_num_rows($result);
+    if($num==1){
+        while($row = mysqli_fetch_assoc($result)){
+            $balance= $row["Balance"];
         }
         mysqli_close($con);
         echo  "<div class='accHeader'>".$_SESSION["name"]."</div>";
         ?>
 
-        <div class="balanceContainer">
-            
-            <div class="balanceHeader">Balance: <?php echo $balance; ?></div>
-        </div>
-        <div class="orderHeader">Orders</div>
-        <div id="menuListing">
+    <div class="balanceContainer">
 
-        </div>
-        <div>
+        <div class="balanceHeader">Balance: <?php echo $balance; ?></div>
+    </div>
+    <div class="orderHeader">Orders</div>
+    <div id="menuListing">
+
+    </div>
+    <div>
 
         <script>
             apiURL = "./api.php?QueryNum=3&View=AccountOrders";
             loadMenu(apiURL);
         </script>
-       
-    <?php }?>
-    <a href="logout.php" class="logout">Logout</a>
-    </section>
-</body>
 
+        <?php }?>
+        <a href="logout.php" class="logout">Logout</a>
+</section>
+</body>
 </html>
