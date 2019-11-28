@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include 'autoload.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./js/viewLoader.js"></script>
@@ -70,39 +71,44 @@
                 </div>
             </div>
         </div>
-    <?php } else { 
-        $id = $_SESSION['id'];
-        include 'config.php';
-        include 'autoload.php';
-        $s = "select * from Accounts where ID = '$id'";
-        $result= mysqli_query($con, $s);
-        $num = mysqli_num_rows($result);
-        if($num==1){
-            while($row = mysqli_fetch_assoc($result)){
-                $balance= $row["Balance"];
+    <?php } else {
+        echo "<div><h3>".$_SESSION["name"]." Account Page</h3></div>"; ?>
+
+        <div id="AddBalance">
+            <h3>Manage Balance</h3>
+            <?php
+
+            // Create connection
+            $conn = new mysqli(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'), env('DB_NAME'));
+
+            // Check connection
+            if ($conn->connect_error) {
+                echo "<p>Connection Failed</p>";
+                die("Connection failed: " . $conn->connect_error);
             }
-        }
-        echo  "<div class='accHeader'>".$_SESSION["name"]."</div>";
-        ?>
 
-        <div class="balanceContainer">
-            
-            <div class="balanceHeader">Balance: <?php echo $balance; ?></div>
-        </div>
-        <div class="orderHeader">Orders</div>
-        <div id="menuListing">
+            $sqlQuery = "SELECT Balance FROM Accounts WHERE ID=1";
+            $result = $conn->query($sqlQuery);
+            $row = mysqli_fetch_assoc($result);
+            echo "Balance $".$row['Balance'];
+            mysqli_close($conn);
+            ?>
+
 
         </div>
-        <div>
+        <h3>Orders</h3>
+        <div id="menuListing"></div>
 
         <script>
             apiURL = "./api.php?QueryNum=3&View=AccountOrders";
             loadMenu(apiURL);
         </script>
-       
+        <a href="logout.php">Logout</a>
     <?php }?>
-    <a href="logout.php" class="logout">Logout</a>
     </section>
+
+
+
 </body>
 
 </html>
