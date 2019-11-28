@@ -38,8 +38,9 @@ session_start();
                 Filter
                 <a onclick="loadMenu('./api.php?QueryNum=0')">All</a>
                 <a onclick="loadMenu('./api.php?QueryNum=2&Location=UA')">UA</a>
-                <a onclick="loadMenu('./api.php?QueryNum=2&Location=UB%20Caf')">UB</a>
+                <a onclick="loadMenu('./api.php?QueryNum=2&Location=UB%20Caf')">UB Caf</a>
                 <a onclick="loadMenu('./api.php?QueryNum=2&Location=DC%20Caf')">DC Caf</a>
+                <a onclick="loadMenu('./api.php?QueryNum=2&Location=Library')">Library</a>
                 <a onclick="loadMenu('./api.php?QueryNum=3&View=CheapFood')">Cheap Food</a>
                 <a onclick="loadMenu('./api.php?QueryNum=3&View=RestoLocations')">Location</a>
                 <a onclick="loadMenu('./api.php?QueryNum=3&View=LowCal')">Low Calories</a>

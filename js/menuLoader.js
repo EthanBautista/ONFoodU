@@ -23,6 +23,7 @@ function loadMenu(apiURL){
         const url4 = "./api.php?QueryNum=3&View=CheapFood";
         const url5 = "./api.php?QueryNum=3&View=RestoLocations";
         const url6 = "./api.php?QueryNum=3&View=LowCal";
+        const url7 = "./api.php?QueryNum=2&Location=Library";
 
         var tableHTML = "";
         var i = 0;
@@ -47,7 +48,7 @@ function loadMenu(apiURL){
         }
 
         //Display with order column
-        if(url1 === apiURL || url2 === apiURL || url3 === apiURL){
+        if(url1 === apiURL || url2 === apiURL || url3 === apiURL || url7 === apiURL){
 
             tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th><th>Order</th></tr>";
             for(i = 0; i < parsedJsonMenu.length; i++){
@@ -85,7 +86,7 @@ function loadMenu(apiURL){
 
 
         tableHTML += "</table>";
-        console.log(tableHTML);
+        //console.log(tableHTML);
 
         document.getElementById("menuListing").innerHTML = tableHTML;
     }
