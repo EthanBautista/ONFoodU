@@ -70,7 +70,9 @@
                 </div>
             </div>
         </div>
-    <?php } else { echo  $_SESSION["id"] ;?>
+    <?php } else { echo  $_SESSION["id"] ;
+            echo $_SESSION["name"];
+        ?>
         <div id="menuListing">
 
 </div>
