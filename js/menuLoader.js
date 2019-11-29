@@ -46,10 +46,11 @@ function loadMenu(apiURL){
                         "</tr>";
 
             }
+            tableHTML += "</table>";
         }
 
         //Display with order column
-        if(url1 === apiURL || url2 === apiURL || url3 === apiURL || url7 === apiURL || url8 == apiURL){
+        if(url1 === apiURL || url2 === apiURL || url3 === apiURL || url7 === apiURL || url8 === apiURL){
 
             tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th><th></th></tr>";
             for(i = 0; i < parsedJsonMenu.length; i++){
@@ -66,6 +67,7 @@ function loadMenu(apiURL){
                         "<input type='submit' class='add' onclick=addCart('"+parsedJsonMenu[i].ItemID +"') value='Add'/></form></td>" +
                         "</tr>";
             }
+            tableHTML += "</table>";
         }
 
         //Display Location and Resto Name
@@ -83,13 +85,28 @@ function loadMenu(apiURL){
                     //"<td>" + parsedJsonMenu[i] + "</td>" +
                     "</tr>";
             }
+            tableHTML += "</table>";
         }
 
 
+        //Hide or show google map
+        var mapObj = document.getElementById('map');
+        if(url5 === apiURL){
+            console.log("hiding");
+            if($(mapObj).hasClass("hide")){
+                $(mapObj).removeClass("hide");
+            }
+        } else {
+            if(!$(mapObj).hasClass("hide")){
+                $(mapObj).addClass("hide");
+            }
+        }
 
-        tableHTML += "</table>";
+
         //console.log(tableHTML);
 
         document.getElementById("menuListing").innerHTML = tableHTML;
+
+
     }
 }
