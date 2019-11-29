@@ -27,19 +27,6 @@ function loadMenu(apiURL) {
                     "<td>" + parsedJsonMenu[i].Quantity + "</td>" +
                     "</tr>";
             }
-        } else if (apiURL === "./api.php?QueryNum=3&View=UserOrders") {
-            // Fix headers
-            var tableHTML = "<table class='orderTable'><tr><th>Order ID</th><th>Food Name</th><th>Description</th><th>Calories</th><th>Price</th><th>Quantity</th></tr>";
-            for (var i = 0; i < parsedJsonMenu.length; i++) {
-                tableHTML = tableHTML + "<tr>" +
-                    "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
-                    "<td>" + parsedJsonMenu[i].FoodName + "</td>" +
-                    "<td>" + parsedJsonMenu[i].Description + "</td>" +
-                    "<td>" + parsedJsonMenu[i].Calories + " kcal</td>" +
-                    "<td>" + parsedJsonMenu[i].Price + "</td>" +
-                    "<td>" + parsedJsonMenu[i].Quantity + "</td>" +
-                    "</tr>";
-            }
         } else if (apiURL === "./api.php?QueryNum=3&View=OrdersWItems") {
             // Fix headers
             var tableHTML = "<table class='orderTable'><tr><th>Order Id</th></tr>";
@@ -61,6 +48,19 @@ function loadMenu(apiURL) {
             }
         
 
+    } else{
+        // Fix headers
+        var tableHTML = "<table class='orderTable'><tr><th>Order ID</th><th>Food Name</th><th>Description</th><th>Calories</th><th>Price</th><th>Quantity</th></tr>";
+        for (var i = 0; i < parsedJsonMenu.length; i++) {
+            tableHTML = tableHTML + "<tr>" +
+                "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
+                "<td>" + parsedJsonMenu[i].FoodName + "</td>" +
+                "<td>" + parsedJsonMenu[i].Description + "</td>" +
+                "<td>" + parsedJsonMenu[i].Calories + " kcal</td>" +
+                "<td>" + parsedJsonMenu[i].Price + "</td>" +
+                "<td>" + parsedJsonMenu[i].Quantity + "</td>" +
+                "</tr>";
+        }
     }
     //console.log(tableHTML);
     tableHTML += "</table>";
