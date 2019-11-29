@@ -87,7 +87,18 @@ session_start();
             }
         ?>
         </div>
+
+
 </section>
+<section>
+    <div id="map"></div>
+</section>
+
+
+
+<script type"text/javascript" src="./js/maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap">initMap();</script>
+
 </body>
 
 </html>
