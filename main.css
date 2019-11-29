@@ -216,6 +216,18 @@ div.grid-right {
     cursor: pointer;
   }
 
+  input.add{
+    background-color: #FF6A38; 
+    border: none;
+    color: white;
+    height: 100%;
+    padding: 15px 48px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
 /* Table */
 table.menuTable{
     border: 1px solid #003C72;
@@ -236,6 +248,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 }
 
 .menuTable tr th:nth-child(1){
+    width: 15%;
+}
+.menuTable tr th:nth-child(2){
     width: 15%;
 }
 .menuTable tr th:nth-child(3){
@@ -288,6 +303,67 @@ table.orderTable{
     border: 1px solid #003C72;
 }
 
+.cartContainer{
+    margin: auto;
+    width: 60%;
+    border: 10px double #003C72;
+    padding: 10px;
+    padding-bottom: 5%;
+}
+
+table.cartTable{
+    border: 2px solid #003C72;
+    font-size: 20px;
+    font-family: 'ITC Franklin Gothic STD';
+}
+
+.cartTable th{
+    background-color: #003C72;
+    color: white;
+    text-align: left;
+    font-family: 'Ubuntu';
+    border: 1px solid #003C72;
+    width: 100%;
+}
+input.remove{
+    background-color: #FF6A38; 
+    border: none;
+    color: white;
+    height: 100%;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.cartTable tr th:nth-child(1){
+    width: 30%;
+}
+.cartTable tr th:nth-child(2){
+    width: 30%;
+}
+.cartTable tr th:nth-child(3){
+    width: 10%;
+}
+.cartTable tr th:nth-child(4){
+    width: 15%;
+}
+.cartTable tr th:nth-child(5){
+    width: 15%;
+}
+
+input.checkout{
+    float: right;
+    background-color: #FF6A38; 
+    border: none;
+    color: white;
+    height: 100%;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
 /* Account Page */
 .accHeader{
     font-size: 60px;
@@ -340,9 +416,3 @@ table.orderTable{
     color: #FF6A38;
 }
 
-.cartContainer{
-    margin: auto;
-    width: 50%;
-    border: 1px solid #003C72;
-    padding: 10px;
-}

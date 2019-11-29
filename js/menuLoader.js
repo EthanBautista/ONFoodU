@@ -50,7 +50,7 @@ function loadMenu(apiURL){
         //Display with order column
         if(url1 === apiURL || url2 === apiURL || url3 === apiURL || url7 === apiURL){
 
-            tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th><th>Order</th></tr>";
+            tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th><th></th></tr>";
             for(i = 0; i < parsedJsonMenu.length; i++){
                     tableHTML = tableHTML + "<tr>" +
                         "<td>" + parsedJsonMenu[i].RestoName + "</td>" +

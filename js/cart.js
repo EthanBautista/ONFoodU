@@ -51,7 +51,7 @@ function updateCart(cartData){
     console.log(restoArr);
     console.log(total);
     for (var x = 0; x < restoArr.length; x++){
-        var tableHTML = "<table class='cartTable'><tr><th>Restaurant Name</th><th>Item</th><th>Quantity</th><th>Price</th><th>Total</th></tr>";
+        var tableHTML = "<table class='cartTable'><tr><th>Restaurant Name</th><th>Item</th><th>Quantity</th><th>Price</th><th>Total</th><th></th></tr>";
 
         for(var i = 0; i < parsedJson.length; i++){
             if (restoArr[x] == parsedJson[i].restoNum){
@@ -63,7 +63,7 @@ function updateCart(cartData){
                     "<td>" + parsedJson[i].qty + "</td>" +
                     "<td>$" + parsedJson[i].price + "</td>" +
                     "<td>" + parsedJson[i].total + "</td>" +
-                    "<td> <input type='button' onClick='removeCart("+parsedJson[i].id+")' value='remove'/></td>";
+                    "<td> <input type='button' class='remove' onClick='removeCart("+parsedJson[i].id+")' value='remove'/></td>";
                     //"<td>" + parsedJsonMenu[i] + "</td>" +
                     //"<td>" + parsedJsonMenu[i] + "</td>" +
                     
@@ -85,7 +85,7 @@ function updateCart(cartData){
     
     strTotal = JSON.stringify(total);
     strRestoArr = JSON.stringify(restoArr);
-    fullTable += "<input type='button' onClick=addtodb('"+strTotal+"','"+ strRestoArr+"') value='Checkout'>";
+    fullTable += "<input type='button' class='checkout' onClick=addtodb('"+strTotal+"','"+ strRestoArr+"') value='Checkout'>";
     
     console.log(fullTable);
     document.getElementById("cart").innerHTML = fullTable;

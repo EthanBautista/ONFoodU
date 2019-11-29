@@ -25,12 +25,10 @@ if(isset($_SESSION["id"])){
         if($balance >= $total[$i]){
 
             $sqlQuery = "INSERT INTO `Orders` (`OrderID`, `AccountID`, `RestoNum`, `currentDate`) VALUES (NULL, '$id', '$restoNum', NULL)";
-            if (mysqli_query($con, $sqlQuery)){
-                echo "Order Sent";
-            }
 
-            $sqlQuery = "UPDATE Accounts SET Balance = Balance -".$total[$i]." WHERE ID=".$id;
-            mysqli_query($con, $sqlQuery);
+
+            $sql = "UPDATE Accounts SET Balance = Balance -".$total[$i]." WHERE ID=".$id;
+            mysqli_query($con, $sql);
 
             // Getitng order ID
             $sql = "SELECT MAX(`OrderID`) as maximum FROM `Orders`";
@@ -49,7 +47,12 @@ if(isset($_SESSION["id"])){
                     $result= mysqli_query($con, $query);
                 }
             }
+        }else{
+            echo "Not Enough Balance";
         }
+    }
+    if (mysqli_query($con, $sqlQuery)){
+        echo "Order Sent";
     }
 
     unset($_SESSION['cart'.$location]);
