@@ -74,7 +74,7 @@ session_start();
     <?php } else {
     $id = $_SESSION['id'];
     include 'config.php';
-    include 'autoload.php';
+    
     $s = "select * from Accounts where ID = '$id'";
     $result= mysqli_query($con, $s);
     $num = mysqli_num_rows($result);
@@ -89,7 +89,7 @@ session_start();
 
     <div class="balanceContainer">
 
-        <div class="balanceHeader">Balance: <?php echo $balance; ?></div>
+        <div class="balanceHeader">Balance: <?php echo round($balance,2); ?></div>
 
     </div>
 

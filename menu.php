@@ -76,11 +76,11 @@ session_start();
     <div class="orderSysHeader"> Shopping Cart</div>
     <div class="cartContainer">
         <?php
-            if (isset($_SESSION["id"])) {?>
+            if (isset($_SESSION["id"])) { ?>
                 <div id="cart">
 
-                </div>      
-        <?php
+                </div>   
+                <?php 
             }else{
                 echo "Login Required";
             }

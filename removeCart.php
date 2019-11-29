@@ -5,7 +5,6 @@ if(isset($_SESSION["id"])){
 
     include 'config.php';
     
-    //Check if get or post
 if(isset($_POST['id'])){
     $foodID = $_POST['id'];
 
