@@ -56,7 +56,7 @@ function loadMenu(apiURL) {
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
                     "<td>" + parsedJsonMenu[i].AccountID + "</td>" +
                     "<td>" + parsedJsonMenu[i].RestoNum + "</td>" +
-                    "<td>" + parsedJsonMenu[i].Date + " kcal</td>" +
+                    "<td>" + parsedJsonMenu[i].currentDate + " </td>" +
                     "</tr>";
             }
         
