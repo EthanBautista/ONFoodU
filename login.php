@@ -109,9 +109,9 @@ session_start();
     <div class="orderHeader">Orders</div>
     
     <section>
-        <div class="row">
-            <div class="column25">
-                <div class="FilterContainer">
+        <div class="rowlogin">
+            <div class="column30">
+                <div class="orderFilterContainer">
                     Filter
                     <a onclick="loadMenu('./api.php?QueryNum=3&View=AccountOrders')">Account Orders</a>
                     <a onclick="loadMenu('./api.php?QueryNum=3&View=UserOrders')">User Orders</a>
@@ -121,7 +121,7 @@ session_start();
                 </div>
             </div>
 
-            <div class="column75">
+            <div class="column70">
                 <div id="menuListing">
 
                 </div>
