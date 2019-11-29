@@ -74,7 +74,7 @@ session_start();
     <?php } else {
     $id = $_SESSION['id'];
     include 'config.php';
-    include 'autoload.php';
+    
     $s = "select * from Accounts where ID = '$id'";
     $result= mysqli_query($con, $s);
     $num = mysqli_num_rows($result);
@@ -89,17 +89,18 @@ session_start();
 
     <div class="balanceContainer">
 
-        <div class="balanceHeader">Balance: <?php echo $balance; ?></div>
+        <div class="balanceHeader">Balance: <?php echo round($balance,2); ?></div>
 
     </div>
-
+    
     <div id="addBalanceContainer">
         <form onsubmit="return false">
-            <table>
-                <tr><td>Credit Card Number:</td><td><input required type="number" id="ccnum" name="ccnum"></td></tr>
-                <tr><td> Name On Card:</td><td><input required type="text" id="name" name="name"></td></tr>
-                <tr><td> Add Amount:</td><td><input required type="number" id="addAmount"></td></tr>
-                <tr><td></td><td><button id="addMoney()" onclick="addMoney()">Add Money</button></td></tr>
+            <table class = "addBalanceT">
+                <tr><th>Add Balance</th><th></th></tr>
+                <tr><td>Credit Card Number:</td><td><input required type="number" class="ccnum" id="ccnum" name="ccnum"></td></tr>
+                <tr><td> Name On Card:</td><td><input required type="text" class="ccnum" id="name" name="name"></td></tr>
+                <tr><td> Add Amount:</td><td><input required type="number" class="ccnum" id="addAmount"></td></tr>
+                <tr><td></td><td><button id="addMoney()" class="addMoney" onclick="addMoney()">Add Money</button></td></tr>
             </table>
         </form>
 

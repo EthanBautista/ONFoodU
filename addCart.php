@@ -5,10 +5,9 @@ if(isset($_SESSION["id"])){
 
     include 'config.php';
     
-    //Check if get or post
 if(isset($_POST['id'])){
     $foodID = $_POST['id'];
-        $sqlQuery = "SELECT ItemID, Restaurants.RestoName, FoodName, Price, Restaurants.Location
+        $sqlQuery = "SELECT ItemID, Restaurants.RestoNum, Restaurants.RestoName, FoodName, Price, Restaurants.Location
                     FROM Menu , Restaurants
                     WHERE Menu.RestoNum = Restaurants.RestoNum and ItemID=$foodID";
         // Get ID
@@ -20,6 +19,7 @@ if(isset($_POST['id'])){
                 $price = $row["Price"];
                 $location = $row["Location"];
                 $resto = $row["RestoName"];
+                $restoNum = $row["RestoNum"];
             }
         }
 
@@ -30,13 +30,16 @@ if(isset($_POST['id'])){
                 $count = count($_SESSION['cart'.$location]);
                 $item_array = array(
                     'id' => $foodID,
+                    'restoNum' => $restoNum,
                     'name' => $name,
                     'location' => $location,
                     'qty' => 1,
+                    'resto' => $resto,
                     'price' => $price,
                     'total' => $price
                 );
                 $_SESSION['cart'.$location][$count] = $item_array;
+                $_SESSION['restoLoc'] = $location;
 
             }else{
                 // If item exists, find array and update qty & price
@@ -49,14 +52,17 @@ if(isset($_POST['id'])){
             // when cart doesnt exist create array
             $item_array = array(
                 'id' => $foodID,
+                'restoNum' => $restoNum,
                 'name' => $name,
                 'location' => $location,
                 'qty' => 1,
+                'resto' => $resto,
                 'price' => $price,
                 'total' => $price
                 
             );
             $_SESSION['cart'.$location][0] = $item_array;
+            $_SESSION['restoLoc'] = $location;
         }
         echo json_encode($_SESSION['cart'.$location]);
     }

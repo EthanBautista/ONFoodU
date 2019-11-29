@@ -119,6 +119,7 @@ div.grid-left {
     margin: 2% 0 0 80%;
     background-color: #003C72;
     color: white;
+    cursor: pointer;
 }
 
 div.grid-right {
@@ -129,6 +130,7 @@ div.grid-right {
     margin: 2% 0 0 0;
     background-color: #003C72;
     color: white;
+    cursor: pointer;
 }
 
 .locationText {
@@ -152,11 +154,11 @@ div.grid-right {
         width: 100%;
     }
 
-    .grid-left {
+    div.grid-left {
         width: 100%;
     }
 
-    .grid-right {
+    div.grid-right {
         width: 100%;
     }
 }
@@ -216,6 +218,18 @@ div.grid-right {
     cursor: pointer;
   }
 
+  input.add{
+    background-color: #FF6A38; 
+    border: none;
+    color: white;
+    height: 100%;
+    padding: 15px 48px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
 /* Table */
 table.menuTable{
     border: 1px solid #003C72;
@@ -236,6 +250,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 }
 
 .menuTable tr th:nth-child(1){
+    width: 15%;
+}
+.menuTable tr th:nth-child(2){
     width: 15%;
 }
 .menuTable tr th:nth-child(3){
@@ -288,14 +305,75 @@ table.orderTable{
     border: 1px solid #003C72;
 }
 
+.cartContainer{
+    margin: auto;
+    width: 60%;
+    border: 10px double #003C72;
+    padding: 10px;
+    padding-bottom: 5%;
+}
+
+table.cartTable{
+    border: 2px solid #003C72;
+    font-size: 20px;
+    font-family: 'ITC Franklin Gothic STD';
+}
+
+.cartTable th{
+    background-color: #003C72;
+    color: white;
+    text-align: left;
+    font-family: 'Ubuntu';
+    border: 1px solid #003C72;
+    width: 100%;
+}
+input.remove{
+    background-color: #FF6A38; 
+    border: none;
+    color: white;
+    height: 100%;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.cartTable tr th:nth-child(1){
+    width: 30%;
+}
+.cartTable tr th:nth-child(2){
+    width: 30%;
+}
+.cartTable tr th:nth-child(3){
+    width: 10%;
+}
+.cartTable tr th:nth-child(4){
+    width: 15%;
+}
+.cartTable tr th:nth-child(5){
+    width: 15%;
+}
+
+input.checkout{
+    float: right;
+    background-color: #FF6A38; 
+    border: none;
+    color: white;
+    height: 100%;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
 /* Account Page */
 .accHeader{
     font-size: 60px;
     font-family: 'Ubuntu';
-    color: #003C72;
+    color: white;
     font-weight: bold;
     text-align: center;
-    background-color: #FF6A38;
+    background-color: #003C72;
     height: 16vh;
     padding-top: 2.5%;
 }
@@ -309,7 +387,7 @@ table.orderTable{
 }
 
 .balanceContainer{
-    background-color: #003C72;
+    background-color: #FF6A38;
     margin-bottom: 5%;
 }
 
@@ -340,9 +418,49 @@ table.orderTable{
     color: #FF6A38;
 }
 
-.cartContainer{
-    margin: auto;
-    width: 50%;
-    border: 1px solid #003C72;
+/*Add Balance Table*/
+table.addBalanceT{
+    margin-left:auto; 
+    margin-right:auto;
+    border: 2px solid #003C72;
+    font-size: 20px;
+    font-family: 'ITC Franklin Gothic STD';
     padding: 10px;
+    float: center;
 }
+
+.addBalanceT th{
+    background-color: #003C72;
+    color: white;
+    text-align: left;
+    font-family: 'Ubuntu';
+    border: 1px solid #003C72;
+    width: 100%;
+    font-size: 24px;
+}
+
+.addBalanceT tr th:nth-child(1){
+    width: 30%;
+}
+.addBalanceT tr th:nth-child(2){
+    width: 70%;
+}
+
+input.ccnum{
+    float: right;
+    width: 100%;
+}
+
+button.addMoney{
+    background-color: #FF6A38; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 2%;
+    float: right;
+    margin:1%;
+}
+

@@ -24,6 +24,7 @@ function loadMenu(apiURL){
         const url5 = "./api.php?QueryNum=3&View=RestoLocations";
         const url6 = "./api.php?QueryNum=3&View=LowCal";
         const url7 = "./api.php?QueryNum=2&Location=Library";
+        const url8 = "./api.php?QueryNum=2&Location=Student%20Center";
 
         var tableHTML = "";
         var i = 0;
@@ -48,9 +49,9 @@ function loadMenu(apiURL){
         }
 
         //Display with order column
-        if(url1 === apiURL || url2 === apiURL || url3 === apiURL || url7 === apiURL){
+        if(url1 === apiURL || url2 === apiURL || url3 === apiURL || url7 === apiURL || url8 == apiURL){
 
-            tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th><th>Order</th></tr>";
+            tableHTML = "<table class='menuTable'><tr><th>Restaurant Name</th><th>Food Item</th><th>Price</th><th>Calories</th><th>Description</th><th>Location</th><th></th></tr>";
             for(i = 0; i < parsedJsonMenu.length; i++){
                     tableHTML = tableHTML + "<tr>" +
                         "<td>" + parsedJsonMenu[i].RestoName + "</td>" +
