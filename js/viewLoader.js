@@ -17,7 +17,7 @@ function loadMenu(apiURL) {
         var parsedJsonMenu = JSON.parse(jsonData);
 
         if (apiURL === "./api.php?QueryNum=3&View=AccountOrders") {
-            var tableHTML = "<table class='orderTable'><tr><th>ID</th><th>Food Item</th><th>Order ID</th><th>FoodName</th><th>Quantity</th></tr>";
+            var tableHTML = "<table class='orderTable'><tr><th>ID</th><th>Name</th><th>Order ID</th><th>FoodName</th><th>Quantity</th></tr>";
             for (var i = 0; i < parsedJsonMenu.length; i++) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].ID + "</td>" +
