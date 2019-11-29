@@ -33,7 +33,7 @@ function addtodb(Total,restoNum){
                restoArr: restoNum},
     }).done(function(data) {
             // Do stuff when the AJAX call returns
-            sentOrder(data);
+            document.getElementById("cart").innerHTML = data;
     });
 }
 
@@ -48,8 +48,7 @@ function updateCart(cartData){
             total.push(0);
         }
     }
-    console.log(restoArr);
-    console.log(total);
+    
     for (var x = 0; x < restoArr.length; x++){
         var tableHTML = "<table class='cartTable'><tr><th>Restaurant Name</th><th>Item</th><th>Quantity</th><th>Price</th><th>Total</th><th></th></tr>";
 
@@ -64,11 +63,6 @@ function updateCart(cartData){
                     "<td>$" + parsedJson[i].price + "</td>" +
                     "<td>" + parsedJson[i].total + "</td>" +
                     "<td> <input type='button' class='remove' onClick='removeCart("+parsedJson[i].id+")' value='remove'/></td>";
-                    //"<td>" + parsedJsonMenu[i] + "</td>" +
-                    //"<td>" + parsedJsonMenu[i] + "</td>" +
-                    
-                    
-
             }
         }
 
@@ -87,11 +81,6 @@ function updateCart(cartData){
     strRestoArr = JSON.stringify(restoArr);
     fullTable += "<input type='button' class='checkout' onClick=addtodb('"+strTotal+"','"+ strRestoArr+"') value='Checkout'>";
     
-    console.log(fullTable);
-    document.getElementById("cart").innerHTML = fullTable;
-    //document.getElementById("cart").innerHTML = tableHTML;
-}
 
-function sentOrder(cartData){
-    document.getElementById("cart").innerHTML = cartData;
+    document.getElementById("cart").innerHTML = fullTable;
 }
