@@ -73,6 +73,9 @@ session_start();
         </div>
     </div>
 </section>
+<section>
+    <div id="map"></div>
+</section>
 <section class="orderContainer">
     <div class="orderSysHeader"> Shopping Cart</div>
     <div class="cartContainer">
@@ -90,9 +93,7 @@ session_start();
 
 
 </section>
-<section>
-    <div id="map"></div>
-</section>
+
 
 
 
