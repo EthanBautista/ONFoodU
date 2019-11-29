@@ -113,7 +113,7 @@ session_start();
             <div class="column30">
                 <div class="orderFilterContainer">
                     Filter
-                    <a onclick="loadMenu('./api.php?QueryNum=3&View=AccountOrders&ID='.$id.'')">Account Orders</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=AccountOrders')">Account Orders</a>
                     <a onclick="loadMenu('./api.php?QueryNum=3&View=UserOrders')">User Orders</a>
                     <a onclick="loadMenu('./api.php?QueryNum=3&View=OrdersWItems')">Orders with Items</a>
                     <a onclick="loadMenu('./api.php?QueryNum=3&View=OrdersOneItemMore')">Orders One Item More</a>
@@ -133,12 +133,6 @@ session_start();
 
     </div>
     <div>
-
-        <script>
-            apiURL = "./api.php?QueryNum=3&View=AccountOrders";
-            loadMenu(apiURL);
-
-        </script>
         <a href="logout.php" class="logout">Logout</a>
         <?php }?>
         
