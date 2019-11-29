@@ -93,10 +93,19 @@ function caseTwoQuery($conn){
 
 function caseThreeQuery($conn){
 	if(isset($_GET['View']) && !empty($_GET['View'])){
-		$sqlQuery = "
+        if(isset($_GET['ID']) && !empty($_GET['ID'])){
+            $sqlQuery = "
+			SELECT * FROM ".$_GET['View']." WHERE ID = ".$_GET['ID']."";
+            jsonReponse($conn, $sqlQuery);
+        }
+		else {
+            $sqlQuery = "
 			SELECT * FROM ".$_GET['View']."";
-        jsonReponse($conn, $sqlQuery);
+            jsonReponse($conn, $sqlQuery);
+        }
 	} else echo json_encode(array("Bad Request", "View not set or empty"));
 }
+
+
 
 ?>
