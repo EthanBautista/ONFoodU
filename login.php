@@ -97,8 +97,8 @@ session_start();
         <form onsubmit="return false">
             <table class = "addBalanceT">
                 <tr><th>Add Balance</th><th></th></tr>
-                <tr><td>Credit Card Number:</td><td><input required type="number" class="ccnum" id="ccnum" name="ccnum"></td></tr>
-                <tr><td> Name On Card:</td><td><input required type="text" class="ccnum" id="name" name="name"></td></tr>
+                <tr><td>Credit Card Number:</td><td><input required type="number" class="ccnum" id="ccnum" name="ccnum" placeholder="123456789123"></td></tr>
+                <tr><td> Name On Card:</td><td><input required type="text" class="ccnum" id="name" name="name" placeholder="Bob Builder"></td></tr>
                 <tr><td> Add Amount:</td><td><input required type="number" class="ccnum" id="addAmount"></td></tr>
                 <tr><td></td><td><button id="addMoney()" class="addMoney" onclick="addMoney()">Add Money</button></td></tr>
             </table>

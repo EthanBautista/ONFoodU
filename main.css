@@ -512,3 +512,7 @@ button.addMoney{
 .hide{
     display: none;
 }
+
+::placeholder {
+    color: rgb(194, 189, 189);
+  }
