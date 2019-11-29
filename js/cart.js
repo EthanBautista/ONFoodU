@@ -45,7 +45,7 @@ function updateCart(cartData){
     for (var y = 0; y < parsedJson.length; y++){
         if (!restoArr.includes(parsedJson[y].restoNum)){
             restoArr.push(parsedJson[y].restoNum);
-            total[y] = 0;
+            total.push(0);
         }
     }
     console.log(restoArr);
