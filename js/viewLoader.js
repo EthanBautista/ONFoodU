@@ -22,7 +22,7 @@ function loadMenu(apiURL) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].ID + "</td>" +
                     "<td>" + parsedJsonMenu[i].Name + "</td>" +
-                    "<td>$" + parsedJsonMenu[i].OrderID + "</td>" +
+                    "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
                     "<td>" + parsedJsonMenu[i].FoodName + "</td>" +
                     "<td>" + parsedJsonMenu[i].Quantity + "</td>" +
                     "</tr>";
@@ -34,7 +34,7 @@ function loadMenu(apiURL) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
                     "<td>" + parsedJsonMenu[i].FoodName + "</td>" +
-                    "<td>$" + parsedJsonMenu[i].Description + "</td>" +
+                    "<td>" + parsedJsonMenu[i].Description + "</td>" +
                     "<td>" + parsedJsonMenu[i].Calories + " kcal</td>" +
                     "<td>" + parsedJsonMenu[i].Price + "</td>" +
                     "<td>" + parsedJsonMenu[i].Quantity + "</td>" +
@@ -55,7 +55,7 @@ function loadMenu(apiURL) {
                 tableHTML = tableHTML + "<tr>" +
                     "<td>" + parsedJsonMenu[i].OrderID + "</td>" +
                     "<td>" + parsedJsonMenu[i].AccountID + "</td>" +
-                    "<td>$" + parsedJsonMenu[i].RestoNum + "</td>" +
+                    "<td>" + parsedJsonMenu[i].RestoNum + "</td>" +
                     "<td>" + parsedJsonMenu[i].Date + " kcal</td>" +
                     "</tr>";
             }

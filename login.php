@@ -106,6 +106,28 @@ session_start();
     </div>
 
     <div class="orderHeader">Orders</div>
+    
+    <section>
+        <div class="row">
+            <div class="column25">
+                <div class="FilterContainer">
+                    Filter
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=AccountOrders')">Account Orders</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=UserOrders')">User Orders</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=OrdersWItems')">Orders with Items</a>
+                    <a onclick="loadMenu('./api.php?QueryNum=3&View=OrdersOneItemMore')">Orders One Item More</a>
+
+                </div>
+            </div>
+
+            <div class="column75">
+                <div id="menuListing">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div id="menuListing">
 
     </div>
@@ -120,5 +142,6 @@ session_start();
         <?php }?>
         
 </section>
+
 </body>
 </html>
