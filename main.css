@@ -119,6 +119,7 @@ div.grid-left {
     margin: 2% 0 0 80%;
     background-color: #003C72;
     color: white;
+    cursor: pointer;
 }
 
 div.grid-right {
@@ -129,6 +130,7 @@ div.grid-right {
     margin: 2% 0 0 0;
     background-color: #003C72;
     color: white;
+    cursor: pointer;
 }
 
 .locationText {
@@ -368,10 +370,10 @@ input.checkout{
 .accHeader{
     font-size: 60px;
     font-family: 'Ubuntu';
-    color: #003C72;
+    color: white;
     font-weight: bold;
     text-align: center;
-    background-color: #FF6A38;
+    background-color: #003C72;
     height: 16vh;
     padding-top: 2.5%;
 }
@@ -385,7 +387,7 @@ input.checkout{
 }
 
 .balanceContainer{
-    background-color: #003C72;
+    background-color: #FF6A38;
     margin-bottom: 5%;
 }
 
